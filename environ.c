@@ -88,7 +88,7 @@
 	if (info->argc == 1)
 {
 	_eputs("Not enough arguements.\n");
-	
+
 	return (1);
 }
 	for (i = 1; i <= info->argc; i++)
@@ -115,4 +115,4 @@ return (0);
 	info->env = node;
 
 	return (0);
-
+}
