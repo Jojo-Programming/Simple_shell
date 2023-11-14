@@ -45,7 +45,7 @@ extern char **environ;
  * @num: field of number
  * @str: string
  * @next: pointer to the next node
- * By Jojo-Programming
+ * By Jojo-Programming & Majorplaydev
  */
 
 
@@ -86,7 +86,7 @@ extern char **environ;
  * &&, ;.
  * @readfd: File descriptor for reading
  * line input.
- * @histcount:  Count of history line numbers.
+ * @histry_count:  Count of history line numbers.
  */
 
 typedef struct passinfo
@@ -193,6 +193,24 @@ typedef struct passinfo
 	void ffree(char **);
 	void *_realloc(void *, unsigned int, unsigned int);
 
+
+/* toem_builtin1.c */
+	int _myhistory(info_t *);
+	int _myalias(info_t *);
+
+
+/* toem_environ.c */
+	char *_getenv(info_t *, const char *);
+	int _myenv(info_t *);
+	int _mysetenv(info_t *);
+	int _myunsetenv(info_t *);
+	int populate_env_list(info_t *);
+
+/* toem_getenv.c */
+	char **get_environ(info_t *);
+	int _unsetenv(info_t *, char *);
+	int _setenv(info_t *, char *, char *);
+
 /* toem_memory.c */
 	int bfree(void **);
 
@@ -214,9 +232,15 @@ typedef struct passinfo
 	int _mycd(info_t *);
 	int _myhelp(info_t *);
 
-/* toem_builtin1.c */
-	int _myhistory(info_t *);
-	int _myalias(info_t *);
+
+/* toem_history.c */
+
+	char *get_history_file(info_t *info);
+
+	int write_history(info_t *info);
+	int read_history(info_t *info);
+	int build_history_list(info_t *info, char *buf, int linecount);
+	int renumber_history(info_t *info);
 
 /*toem_getline.c */
 	ssize_t get_input(info_t *);
@@ -227,27 +251,6 @@ typedef struct passinfo
 	void clear_info(info_t *);
 	void set_info(info_t *, char **);
 	void free_info(info_t *, int);
-
-/* toem_environ.c */
-	char *_getenv(info_t *, const char *);
-	int _myenv(info_t *);
-	int _mysetenv(info_t *);
-	int _myunsetenv(info_t *);
-	int populate_env_list(info_t *);
-
-/* toem_getenv.c */
-	char **get_environ(info_t *);
-	int _unsetenv(info_t *, char *);
-	int _setenv(info_t *, char *, char *);
-
-/* toem_history.c */
-
-	char *get_history_file(info_t *info);
-
-	int write_history(info_t *info);
-	int read_history(info_t *info);
-	int build_history_list(info_t *info, char *buf, int linecount);
-	int renumber_history(info_t *info);
 
 /* toem_lists.c */
 	list_t *add_node(list_t **, const char *, int);
