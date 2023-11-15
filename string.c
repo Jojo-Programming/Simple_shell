@@ -46,7 +46,7 @@
 }
 
 /**
- * start_with : Thecks if the needle starts
+ * start_with - checks if the needle starts
  * with a haystack.
  * @needle: substring to find.
  * @haystack: The string to search.

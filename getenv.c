@@ -108,10 +108,7 @@
 }
 
 	add_node_end(&(info->env), buf, 0);
-
 	free(buf);
-
 	info->env_changed = 1;
-
 	return (0);
 }

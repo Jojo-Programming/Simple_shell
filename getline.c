@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * input_buf - Function that takes in an info_t struct and two pointers to char arrays and
+ * input_buf - Takes in an info_t struct and
  * assigns them values
  *
  * @info: Pointer to info_t Structure
@@ -100,11 +100,9 @@
 	*buf_p = p; /* return pointer to current command position */
 	return (_strlen(p)); /* return the length of current command */
 }
-
 	*buf_p = buf; /* when not a chain, pass back buffer from _getline() */
 	return (r); /* return length of buffer from _getline() */
 }
-
 /**
 * read_buf – reads a buffer
 * @info: parameter struct

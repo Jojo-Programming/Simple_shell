@@ -85,26 +85,18 @@
 
 	if (fd == -1)
 	return (0);
-
 	if (!fstat(fd, &st))
 	fsize = st.st_size;
-
 	if (fsize < 2)
 	return (0);
-
 	buf = malloc(sizeof(char) * (fsize + 1));
-
 	if (!buf)
 	return (0);
-
 	rdlen = read(fd, buf, fsize);
 	buf[fsize] = 0;
-
 	if (rdlen <= 0)
 	return (free(buf), 0);
-
 	close(fd);
-
 	for (i = 0; i < fsize; i++)
 	if (buf[i] == '\n')
 {
@@ -116,13 +108,11 @@
 	build_history_list(info, buf + last, linecount++);
 	free(buf);
 	info->histcount = linecount;
-
 	while (info->histcount-- >= HIST_MAX)
 	delete_node_at_index(&(info->history), 0);
 	renumber_history(info);
 	return (info->histcount);
 }
-
 /**
 * build_history_list – Builds linked list of
 * history lines.
@@ -149,7 +139,8 @@
 }
 
 /**
-* renumber_history : re-numbers  history linked list after change
+* renumber_history : re-numbers  history
+* linked list after change
 * @info: a structure that contains potential
 *  arguments which are used to maintain
 *

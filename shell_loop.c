@@ -150,7 +150,6 @@ break;
 	if (child_pid == -1)
 {/* TODO: PLACE ERROR FUNCTION */
 	perror("Error:");
-	return;
 }
 	if (child_pid == 0)
 {

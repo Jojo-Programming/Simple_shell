@@ -29,7 +29,6 @@ int main(int ac, char **av)
 {
 	if (errno == EACCES)
 	exit(126);
-	
 	if (errno == ENOENT)
 {
 _eputs(av[0]);

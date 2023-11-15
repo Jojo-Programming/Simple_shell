@@ -44,7 +44,9 @@
 	info->argv[1] = 0;
 }
 }
-	for (i = 0; info->argv && info->argv[i]; i++);
+
+	for (i = 0; info->argv && info->argv[i]; i++)
+
 	info->argc = i;
 
 	replace_alias(info);

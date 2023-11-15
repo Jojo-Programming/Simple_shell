@@ -138,7 +138,7 @@ typedef struct passinfo
  */
 
 
- typedef struct builtin
+typedef struct builtin
 {
 
 	char *type;

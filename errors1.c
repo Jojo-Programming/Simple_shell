@@ -3,7 +3,7 @@
 /**
 * _erratoi – A string to an integer
 * @s: string
-* Return: 0 if no numbers in string and 
+* Return: 0 if no numbers in string and
 * converted number if not -1 on error
 * By : Jojo-Programming
 */

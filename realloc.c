@@ -22,7 +22,7 @@
 }
 
 /**
- * Free - This Frees a string of strings
+ * ffree - This Frees a string of strings
  * @pp: String of strings
  *
  */
